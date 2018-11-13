@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Chat</title>
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
+<body>
+    <div id="app">
+        <h3 class="text-center">Simple Chat</h3>
+        <div id="messages">
+            <div class="col s12">
+                <ul class="list-unstyled" v-cloak>
+                    <li v-for="message in messages">
+                        <span class="date" v-if="message.date">[{{ message.date }}]</span>
+                        <span class="name" v-if="message.user">{{ message.user }}:</span>
+                        <span class="text" :style="{ color: message.color }">
+                            {{ message.text }}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-3">
+                <input type="text" name="" id="" class="form-control" placeholder="User" v-model="user">
+            </div>
+            <div class="col-12 col-sm-9">
+                <input type="text" name="" id="" class="form-control" placeholder="Message" v-model="text" @keyup.enter="sendMessage">
+            </div>
+        </div>
+    </div>
+    <script src="js/app.min.js"></script>
+</body>
+</html>

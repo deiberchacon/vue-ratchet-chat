@@ -1,0 +1,11 @@
+{
+	"name": "simple-chat",
+	"autoload": {
+		"psr-4": {
+			"ChatServer\\Models\\": "src/server/models/"
+		}
+	},
+	"require": {
+		"cboden/ratchet": "^0.3.6"
+	}
+}
